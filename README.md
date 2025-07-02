@@ -21,7 +21,7 @@
   * Esses módulos são armazenados em uma pasta chamada "node_modules".
   * Um arquivo chamdo "package.json" lista todos os módulos que instalamos pelo NPM.
  
-  ````javascript
+  ````node.js
   npm init // cria o package.json
   npm install express // instala um pacote localmente
   npm -g install nodemon // instala um pacote globalmente
