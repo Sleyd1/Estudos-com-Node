@@ -22,9 +22,11 @@
   * Um arquivo chamdo "package.json" lista todos os módulos que instalamos pelo NPM.
  
   ````node.js
-  npm init // cria o package.json
+  npm init ou npm init -y // cria o package.json necessário para instalar pacotes.
   npm install express // instala um pacote localmente
   npm -g install nodemon // instala um pacote globalmente
+  npm list 'nome do modulo' // verifica se um modulo esterno está instalado
+
   ````
 
   ````node.js
