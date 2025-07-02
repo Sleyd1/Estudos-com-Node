@@ -8,3 +8,22 @@
 * Possui apenas um núcleo (single threaded)
 * suporta varias operações simultãneas (non-blocking) Ele usa um Event Loop para lidar com várias tarefas sem travar.
   
+## modulos no Node.js
+* podemos criar nossos proprios módulos ( nosso arquivos) e importalos
+* O Node.js vem com módulos pré-intalados (path, fs, http etc.)
+* para importar um modulo, utilizamos o common.js:
+  ````javascript
+  const path = require('path');
+  const meuArquivo = require('./meu-arquivo.js');
+  ````
+  ### NPM - Node package manager
+  * Podemos instalar módulos de terceiros utilizando o NPM.
+  * Esses módulos são armazenados em uma pasta chamada "node_modules".
+  * Um arquivo chamdo "package.json" lista todos os módulos que instalamos pelo NPM.
+ 
+  ````javascript
+  npm init // cira o package.json
+  npm install express // instala um pacote localmente
+  npm -g install nodemon // instala um pacote globalmente
+  ````
+
