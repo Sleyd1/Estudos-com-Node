@@ -1,0 +1,19 @@
+{
+  "name": "estudos-com-node",
+  "version": "1.0.0",
+  "description": "Estudos com node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sleyd1/Estudos-com-Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sleyd1/Estudos-com-Node/issues"
+  },
+  "homepage": "https://github.com/Sleyd1/Estudos-com-Node#readme"
+}
