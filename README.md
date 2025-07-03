@@ -6,12 +6,12 @@
 
 ## Como Funciona o Node.js
 * Possui apenas um núcleo (single threaded)
-* suporta varias operações simultãneas (non-blocking) Ele usa um Event Loop para lidar com várias tarefas sem travar.
+* Suporta varias operações simultãneas (non-blocking) Ele usa um Event Loop para lidar com várias tarefas sem travar.
   
-## modulos no Node.js
-* podemos criar nossos proprios módulos ( nosso arquivos) e importalos
+## Modulos no Node.js
+* Podemos criar nossos proprios módulos ( nosso arquivos) e importalos
 * O Node.js vem com módulos pré-intalados (path, fs, http etc.)
-* para importar um modulo, utilizamos o common.js:
+* Para importar um modulo, utilizamos o common.js:
   ````javascript
   const path = require('path');
   const meuArquivo = require('./meu-arquivo.js');
