@@ -40,5 +40,16 @@
 | Projeto mais sério/para o GitHub  | `npm init`          |
 | Vai personalizar o `package.json` | `npm init`          |
 
-  
+
+## Pacotes utilizados
+
+| 📦 Pacote    | Para quê?                               |
+| ------------ | --------------------------------------- |
+| **express**  | Criar servidor e rotas                  |
+| **mongoose** | Conectar ao MongoDB e modelar dados     |
+| **nodemon**  | Reiniciar o servidor automaticamente    |
+| **dotenv**   | Usar variáveis de ambiente              |
+| **morgan**   | Fazer logs das requisições              |
+| **cors**     | Permitir requisições de outros domínios |
+
 
