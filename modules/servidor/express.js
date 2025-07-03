@@ -1,6 +1,7 @@
 //criando um servidor com Express
-
 const express = require('express');
+const UserModel = require('../../src/models/Users-models.js');
+
 
 const app = express();
 
@@ -24,4 +25,11 @@ app.get('/users', (req,res) => {
     ]
 
     res.status(200).json(usuarios);
+});
+
+// Rota para criar um novo usuário
+app.post('/users', (req, res) => {
+   const user = UserModel.create(req.body);
+
+   res.status(201).jason(user);
 });
