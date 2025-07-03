@@ -4,6 +4,7 @@ const UserModel = require('../../src/models/Users-models.js');
 
 
 const app = express();
+app.use(express.json()); // Middleware para analisar JSON no corpo das requisições
 
 app.get('/home', (req, res) => {
     res.status(200).send('<h1>Bem-vindo à página inicial!</h1>');
@@ -16,20 +17,65 @@ app.listen(porta, () => {
 });
 
 
+// Esta rota retorna todos os usuários cadastrados no banco de dados
+app.get('/users',async (req,res) => {
 
-app.get('/users', (req,res) => {
-    const usuarios = [
-        { nome: 'Alice', idade: 30 },
-        { nome: 'Bob', idade: 25 },
-        { nome: 'Charlie', idade: 35 }
-    ]
-
-    res.status(200).json(usuarios);
+    try{
+        const usuarios = await UserModel.find({});
+        res.status(200).json(usuarios);
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+    
 });
 
-// Rota para criar um novo usuário
-app.post('/users', (req, res) => {
-   const user = UserModel.create(req.body);
 
-   res.status(201).jason(user);
+
+app.get('/users/:id', async (req, res) => {
+   try{
+        const id = req.params.id;
+        const user = await UserModel.findById(id);
+        res.status(200).json(user);
+   }catch (error) {
+       res.status(500).send(error.message);
+   }
+})
+
+//request para atualizar uma
+app.patch('/users/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        const user = await UserModel.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json(user);
+   }catch (error) {
+       res.status(500).send(error.message);
+   }
+})
+
+//
+
+
+// Rota para criar um novo usuário
+app.post('/users', async (req, res) => {
+    try{
+   const user = await UserModel.create(req.body);
+
+    res.status(201).json(user);
+    } catch (error) {
+        res.status(500).send(error.message);
+        
+    }
+  
+});
+
+
+/// Rota para deletar um usuário
+app.delete('/users/:id', async (req, res) => {
+   try {
+ const id = req.params.id;
+ const user = await UserModel.findByIdAndDelete(id);
+ res.status(200).json({ message: 'Usuário deletado com sucesso!' });
+   }catch (error) {
+       res.status(500).send(error.message);
+   } 
 });
